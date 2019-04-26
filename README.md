@@ -49,8 +49,10 @@ and the result shows
     Accuracy = 83.07%
     Average EER = 8.83%
 
-# Original wav file download
-We will also share the original wav file for the MGB-5 challenge particiants. Please contact us for more information
+# Original wav file download and embeddings
+We will share the original wav file for the MGB-5 challenge particiants. Please contact us for more information
+
+In a few days, we will also share the pre-trained network and extracted dialect embeddigns for baseline.
 
 # Contact
 Please email to organizer if you have question.<br />
