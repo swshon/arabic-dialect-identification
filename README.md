@@ -57,7 +57,6 @@ https://arabicspeech.org/mgb5
 Please email to organizer if you have question.
 
 Suwon Shon (swshon@mit.edu)
-
 Ahmed Ali (amali@hbku.edu.qa)
 
 
