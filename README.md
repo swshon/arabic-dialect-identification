@@ -41,7 +41,7 @@ Example result on Dev set is available on the "result_dev.csv" file. The format 
 
 # Performance evaluation
 Primary performance measure is accuracy (%) and alternative measure will be average EER for each dialects.
-You can check the performance on the dev set as below (need result_dev file)
+You can check the performance on the dev set as below (need result_dev.csv file)
     
     python scripts/measure_performance_dev.py
 and the result shows
