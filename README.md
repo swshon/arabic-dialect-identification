@@ -52,7 +52,7 @@ and the result shows
 # Original wav file download and embeddings
 We will share the original wav file for the MGB-5 challenge particiants. Please contact us for more information
 
-In a few days, we will also share the pre-trained network and extracted dialect embeddigns for baseline.
+In a few days, we will also share the pre-trained network and extracted dialect embeddings for baseline.
 
 # Contact
 Please email to organizer if you have question.<br />
