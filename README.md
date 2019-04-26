@@ -1,7 +1,7 @@
 # arabic-dialect-identification
 Fine-grained, country-level Arabic dialect identification (17 Arabic countries)
 
-This repository is to provide YouTube id for Arabic Dialect Identification (ADI) track of the fifth edition of the Multi-Genre Broadcast Challenge(MGB-5)
+This repository is to provide YouTube id for Arabic Dialect Identification (ADI) track of the fifth edition of the Multi-Genre Broadcast Challenge(MGB-5). Training example of end-to-end dialect identification system is also available.
 
 # ADI Task 
 The task of ADI is dialect identification of speech from YouTube to one of the 17 dialects (ADI17). 
@@ -21,14 +21,6 @@ First, clone this repository and then run the script as below
 
     To be updated...
 
-# Performance measure
-Primary performance measure is accuracy (%) and alternative measure will be average EER for each dialects.
-
-You can check the performance on the dev set as below (need result_dev file)
-    
-    python scripts/measure_performance_dev.py
-
-
 # How to use data
 Each data folder consisted of "segments", "utt2lang", "wav.scp" files. These file format is exactly same as Kaldi data preparation.
 
@@ -37,4 +29,12 @@ Each data folder consisted of "segments", "utt2lang", "wav.scp" files. These fil
     wav.scp: YouTube id, wav file location (you should change the /your_own_folder/ to the directory you downloaded
 
 You can also find more examples at here (http://kaldi-asr.org/doc/data_prep.html)
+
+# Performance measure
+Primary performance measure is accuracy (%) and alternative measure will be average EER for each dialects.
+
+You can check the performance on the dev set as below (need result_dev file)
+    
+    python scripts/measure_performance_dev.py
+
 
