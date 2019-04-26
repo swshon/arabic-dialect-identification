@@ -45,5 +45,7 @@ You can check the performance on the dev set as below (need result_dev file)
     
     python scripts/measure_performance_dev.py
 and the result shows
-    
+
+    Accuracy = 83.07%
+    Average EER = 8.83%
 
