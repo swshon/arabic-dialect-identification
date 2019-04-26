@@ -30,16 +30,16 @@ Each data folder consisted of "segments", "utt2lang", "wav.scp" files. These fil
 
 You can also find more examples at here (http://kaldi-asr.org/doc/data_prep.html)
 
-# Submission of result file and performance evaluation
+# Submission of result file
 You should submit dialect identification result in segment-level in the test set. (test set will be available along the timeline of MGB-5 challenge)
 
-Example result on Dev set is available on the "result_dev.csv" file. The format are [segment id],[score of 1st dialect],...,[score of 17th dialect]. For example, 
+Example result on Dev set is available on the "result_dev.csv" file. The format are [segment id],[score of 1st dialect],...,[score of 17th dialect]. The order of dialects should follows the "data/language_id_initial" file. For example, 
 
     2XwBQJ7eHKs_055962-056391,4.243093,2.983541,2.239949,-0.058526,1.683865,0.002467,-2.371127,0.408665,0.663196,2.114708,0.014819,-0.584736,-1.905150,1.190056,-3.855960,-2.962667,-2.493101
     2XwBQJ7eHKs_056439-057583,13.503886,3.652979,9.747564,-0.765126,-1.163318,0.418676,-1.208075,-4.580471,-0.301157,4.584138,-3.774289,-5.396653,-8.809785,-0.212593,0.556646,4.696869,-8.873792
     2XwBQJ7eHKs_057651-057966,8.615689,-0.127747,6.443430,0.628338,-2.964191,0.540946,-2.832511,-0.427691,1.458990,2.927631,-3.526300,1.207520,-2.909723,-4.378843,0.685941,-1.413409,-6.319705
 
-
+# performance evaluation
 Primary performance measure is accuracy (%) and alternative measure will be average EER for each dialects.
 You can check the performance on the dev set as below (need result_dev file)
     
@@ -48,4 +48,17 @@ and the result shows
 
     Accuracy = 83.07%
     Average EER = 8.83%
+
+# Original wav file download
+We will also share the original wav file for the MGB-5 challenge particiants. Please contact us for more information
+
+# Contact
+https://arabicspeech.org/mgb5
+Please email to organizer if you have question.
+Suwon Shon (swshon@mit.edu)
+Ahmed Ali (amali@hbku.edu.qa)
+
+
+
+
 
