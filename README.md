@@ -53,11 +53,11 @@ and the result shows
 We will also share the original wav file for the MGB-5 challenge particiants. Please contact us for more information
 
 # Contact
-https://arabicspeech.org/mgb5
-Please email to organizer if you have question.
-
+Please email to organizer if you have question.<br />
 Suwon Shon (swshon@mit.edu)<br />
 Ahmed Ali (amali@hbku.edu.qa)
+
+https://arabicspeech.org/mgb5 
 
 
 
