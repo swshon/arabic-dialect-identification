@@ -54,6 +54,11 @@ We will share the original wav file for the MGB-5 challenge particiants. Please 
 
 In a few days, we will also share the pre-trained network and extracted dialect embeddings for baseline.
 
+# Requirements (for example training code)
+    Python 2.7
+    tensorflow (python library, tested on 1.12)
+    librosa (python library, tested on 0.6.0)
+
 # Contact
 Please email to organizer if you have question.<br />
 Suwon Shon (swshon@mit.edu)<br />
