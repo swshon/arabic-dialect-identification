@@ -44,5 +44,6 @@ Primary performance measure is accuracy (%) and alternative measure will be aver
 You can check the performance on the dev set as below (need result_dev file)
     
     python scripts/measure_performance_dev.py
-
+and the result shows
+    
 
