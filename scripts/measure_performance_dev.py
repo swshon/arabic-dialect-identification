@@ -44,11 +44,11 @@ for line in lines:
 
     
 # Read result file (should be in the same order like )
-lines = open('result_dev').readlines()
+lines = open('result_dev.csv').readlines()
 scores = []
 segid = []
 for line in lines:
-    cols = line.rstrip().split()
+    cols = line.rstrip().split(',')
     segid.append(cols[0])
     scores.append(np.float_(cols[1:]))
 scores = np.array(scores)
