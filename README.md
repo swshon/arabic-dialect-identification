@@ -23,3 +23,9 @@ Primary performance measure is accuracy (%) and alternative measure will be aver
 You can check the performance on the dev set as below (need result_dev file)
     
     python scripts/measure_performance_dev.py
+
+# How to download Youtube dataset
+All the YouTube unique id is available in the data folder.
+First, clone this repository and then run the script as below
+
+    To be updated...
