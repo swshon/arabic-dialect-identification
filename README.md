@@ -39,7 +39,7 @@ Example result on Dev set is available on the "result_dev.csv" file. The format 
     2XwBQJ7eHKs_056439-057583,13.503886,3.652979,9.747564,-0.765126,-1.163318,0.418676,-1.208075,-4.580471,-0.301157,4.584138,-3.774289,-5.396653,-8.809785,-0.212593,0.556646,4.696869,-8.873792
     2XwBQJ7eHKs_057651-057966,8.615689,-0.127747,6.443430,0.628338,-2.964191,0.540946,-2.832511,-0.427691,1.458990,2.927631,-3.526300,1.207520,-2.909723,-4.378843,0.685941,-1.413409,-6.319705
 
-# performance evaluation
+# Performance evaluation
 Primary performance measure is accuracy (%) and alternative measure will be average EER for each dialects.
 You can check the performance on the dev set as below (need result_dev file)
     
@@ -55,7 +55,9 @@ We will also share the original wav file for the MGB-5 challenge particiants. Pl
 # Contact
 https://arabicspeech.org/mgb5
 Please email to organizer if you have question.
+
 Suwon Shon (swshon@mit.edu)
+
 Ahmed Ali (amali@hbku.edu.qa)
 
 
