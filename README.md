@@ -37,11 +37,11 @@ You should submit dialect identification result in segment-level in the test set
 
 Example result on Dev set is available on the "result_dev.csv" file. The format are [segment id],[score of 1st dialect],...,[score of 17th dialect]. The order of dialects should follows the "data/language_id_initial" file. For example, 
 
-    2XwBQJ7eHKs_055962-056391,4.243093,2.983541,2.239949,-0.058526,1.683865,0.002467,-2.371127,0.408665,0.663196,2.114708,0.014819,-0.584736,-1.905150,1.190056,-3.855960,-2.962667,-2.493101
-    2XwBQJ7eHKs_056439-057583,13.503886,3.652979,9.747564,-0.765126,-1.163318,0.418676,-1.208075,-4.580471,-0.301157,4.584138,-3.774289,-5.396653,-8.809785,-0.212593,0.556646,4.696869,-8.873792
-    2XwBQJ7eHKs_057651-057966,8.615689,-0.127747,6.443430,0.628338,-2.964191,0.540946,-2.832511,-0.427691,1.458990,2.927631,-3.526300,1.207520,-2.909723,-4.378843,0.685941,-1.413409,-6.319705
+    2XwBQJ7eHKs_055962-056391,3.096405,1.777897,1.452979,-2.077643,-0.419325,-0.345230,-1.016110,-1.385472,3.511110,1.943294,-1.195900,-2.251954,-1.363119,2.556440,-1.121042,0.347785,-2.648575
+    2XwBQJ7eHKs_056439-057583,12.810358,2.679880,4.258311,-1.582249,-0.770333,-1.986860,-3.571980,-0.695768,0.929641,3.286271,-0.159408,-4.281460,-3.185079,-1.564716,-0.437594,2.433181,-5.155079
+    2XwBQJ7eHKs_057651-057966,7.816638,0.154628,8.818256,-0.711897,-0.899901,-1.057132,-1.626845,-3.524030,-1.554264,-2.776326,-0.864858,2.107841,-2.718826,-1.714218,2.685726,3.349209,-4.997468
     
-You can also find the example code to generate this "result_dev.csv" file in the "scripts/baseline_dev.py" file at the line.
+You can also find the example code to generate this "result_dev.csv" file in the "scripts/baseline_dev.py" file at the [line 82](https://github.com/swshon/arabic-dialect-identification/blob/3f7c61982a3f85fe4f6be06dd19b88bbb2b44cea/scripts/baseline_dev.py#L82). 
 
 # Performance evaluation
 Primary performance measure is accuracy (%) and alternative measure will be average EER for each dialects.
@@ -59,6 +59,13 @@ A baseline using end-to-end dialect identification system is provided and you ca
     python scripts/baseline_dev.py
     
 The example code extract MFCC feature from wav file and feed it to end-to-end dialect identification system. Finally, the extracted output layer saved in CSV format (result_dev.csv).
+
+You can find more information about this baseline system in the paper below
+
+Suwon Shon, Ahmed Ali, James Glass,
+Convolutional Neural Networks and Language Embeddings for End-to-End Dialect Recognition,
+Proc. Odyssey 2018 The Speaker and Language Recognition Workshop, 98-104 
+https://arxiv.org/abs/1803.04567
 
 
 # Requirements (for example training code and baseline code)
