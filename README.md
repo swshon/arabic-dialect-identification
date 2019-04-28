@@ -58,7 +58,7 @@ A baseline using end-to-end dialect identification system is provided and you ca
 
     python scripts/baseline_dev.py
     
-The example code extract MFCC feature from wav file and feed it to end-to-end dialect identification system. Finally, the extracted output layer saved in CSV format (result_dev.csv).
+The example code extract MFCC feature from wav file and feed it to end-to-end dialect identification system. Finally, the extracted output layer activations saved in CSV format (result_dev.csv).
 
 You can find more information about this baseline system in the paper below
 
