@@ -79,8 +79,8 @@ class nn:
 
         fc1 = self.fc_layer(res1,1500,"fc1")
         fc1_bn = self.batch_norm_wrapper_fc(fc1, is_training,'bn5',is_batchnorm)
-#        ac1 = tf.nn.relu(fc1_bn)
-        fc2 = self.fc_layer(fc1_bn,600,"fc2")
+        ac1 = tf.nn.relu(fc1_bn)
+        fc2 = self.fc_layer(ac1,600,"fc2")
         fc2_bn = self.batch_norm_wrapper_fc(fc2, is_training,'bn6',is_batchnorm)
         ac2 = tf.nn.relu(fc2_bn)
         

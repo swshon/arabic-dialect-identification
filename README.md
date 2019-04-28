@@ -21,6 +21,8 @@ First, clone this repository and then run the script as below
 
     To be updated...
 
+Or, if you participate MGB-5 Challenge, you can request original wav files to organizer. Please find contact information below.
+
 # How to use data
 Each data folder consisted of "segments", "utt2lang", "wav.scp" files. These file format is exactly same as Kaldi data preparation.
 
@@ -38,23 +40,28 @@ Example result on Dev set is available on the "result_dev.csv" file. The format 
     2XwBQJ7eHKs_055962-056391,4.243093,2.983541,2.239949,-0.058526,1.683865,0.002467,-2.371127,0.408665,0.663196,2.114708,0.014819,-0.584736,-1.905150,1.190056,-3.855960,-2.962667,-2.493101
     2XwBQJ7eHKs_056439-057583,13.503886,3.652979,9.747564,-0.765126,-1.163318,0.418676,-1.208075,-4.580471,-0.301157,4.584138,-3.774289,-5.396653,-8.809785,-0.212593,0.556646,4.696869,-8.873792
     2XwBQJ7eHKs_057651-057966,8.615689,-0.127747,6.443430,0.628338,-2.964191,0.540946,-2.832511,-0.427691,1.458990,2.927631,-3.526300,1.207520,-2.909723,-4.378843,0.685941,-1.413409,-6.319705
+    
+You can also find the example code to generate this "result_dev.csv" file in the "scripts/baseline_dev.py" file at the line.
 
 # Performance evaluation
 Primary performance measure is accuracy (%) and alternative measure will be average EER for each dialects.
-You can check the performance on the dev set as below (need result_dev.csv file)
+You can check the performance on the dev set as below (need result_dev.csv file). 
     
     python scripts/measure_performance_dev.py
 and the result shows
 
-    Accuracy = 83.07%
-    Average EER = 8.83%
+    Accuracy = 83.03%
+    Average EER = 8.57%
 
-# Original wav file download and embeddings
-We will share the original wav file for the MGB-5 challenge particiants. Please contact us for more information
+# Baseline example code with pre-trained model
+A baseline using end-to-end dialect identification system is provided and you can run the example code as below
 
-In a few days, we will also share the pre-trained network and extracted dialect embeddings for baseline.
+    python scripts/baseline_dev.py
+    
+The example code extract MFCC feature from wav file and feed it to end-to-end dialect identification system. Finally, the extracted output layer saved in CSV format (result_dev.csv).
 
-# Requirements (for example training code)
+
+# Requirements (for example training code and baseline code)
     Python 2.7
     tensorflow (python library, tested on 1.12)
     librosa (python library, tested on 0.6.0)
