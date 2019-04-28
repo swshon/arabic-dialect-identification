@@ -62,10 +62,10 @@ The example code extract MFCC feature from wav file and feed it to end-to-end di
 
 You can find more information about this baseline system in the paper below
 
-Suwon Shon, Ahmed Ali, James Glass,
-Convolutional Neural Networks and Language Embeddings for End-to-End Dialect Recognition,
-Proc. Odyssey 2018 The Speaker and Language Recognition Workshop, 98-104 
-https://arxiv.org/abs/1803.04567
+Suwon Shon, Ahmed Ali, James Glass,<br />
+Convolutional Neural Networks and Language Embeddings for End-to-End Dialect Recognition,<br />
+Proc. Odyssey 2018 The Speaker and Language Recognition Workshop, 98-104 <br />
+https://arxiv.org/abs/1803.04567<br />
 
 
 # Requirements (for example training code and baseline code)
