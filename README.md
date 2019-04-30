@@ -48,7 +48,7 @@ Primary performance measure is accuracy (%) and alternative measure will be aver
 You can check the performance on the dev set as below (need result_dev.csv file). 
     
     python scripts/measure_performance_dev.py
-and the result shows
+and the result on Dev set shows
 
     Accuracy = 83.03%
     Average EER = 8.57%
