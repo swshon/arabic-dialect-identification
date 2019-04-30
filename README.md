@@ -41,7 +41,7 @@ Example result on Dev set is available on the "result_dev.csv" file. The format 
     2XwBQJ7eHKs_056439-057583,12.810358,2.679880,4.258311,-1.582249,-0.770333,-1.986860,-3.571980,-0.695768,0.929641,3.286271,-0.159408,-4.281460,-3.185079,-1.564716,-0.437594,2.433181,-5.155079
     2XwBQJ7eHKs_057651-057966,7.816638,0.154628,8.818256,-0.711897,-0.899901,-1.057132,-1.626845,-3.524030,-1.554264,-2.776326,-0.864858,2.107841,-2.718826,-1.714218,2.685726,3.349209,-4.997468
     
-The scores should represent likelihood score, a conditional probability for observed data (O) given each language model (L_i), P(O|L_i). You can also find the example code to generate this "result_dev.csv" file in the "scripts/baseline_dev.py" file at the [line 82](https://github.com/swshon/arabic-dialect-identification/blob/3f7c61982a3f85fe4f6be06dd19b88bbb2b44cea/scripts/baseline_dev.py#L82). 
+The scores should represent likelihood score P(O|L_i), a conditional probability for observed data (O) given each language model (L_i). You can also find the example code to generate this "result_dev.csv" file in the "scripts/baseline_dev.py" file at the [line 82](https://github.com/swshon/arabic-dialect-identification/blob/3f7c61982a3f85fe4f6be06dd19b88bbb2b44cea/scripts/baseline_dev.py#L82). 
 
 # Performance evaluation
 Primary performance measure is accuracy (%) and alternative measure will be average EER for each dialects.
