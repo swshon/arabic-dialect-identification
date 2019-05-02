@@ -21,7 +21,7 @@ First, clone this repository and then run the script as below
 
     To be updated...
 
-Or, if you participate MGB-5 Challenge, you can request original wav files to organizer. Please find contact information below.
+Or, if you participate MGB-5 Challenge, you can request original wav files to organizer. Please find contact information below or fill the form [here](https://forms.gle/CXoQg3HJ4mGoAYhJ6).
 
 # How to use data
 Each data folder consisted of "segments", "utt2lang", "wav.scp" files. These file format is exactly same as Kaldi data preparation.
