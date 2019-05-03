@@ -16,6 +16,15 @@ N_FFT=400
 HOP=160
 VAD=True
 CMVN='m'
+DATA_ROOT='/your_own_folder'
+
+#prepare wav.scp for each data set. Set your $DATA_ROOT variable before run. 
+lines = open('data/dev/utt2lang').readlines()
+fid = open('data/dev/wav.scp.test','w')
+for line in lines:
+    cols = line.rstrip().split()
+    fid.write('%s %s/dev/%s.wav\n'%(cols[0], DATA_ROOT, cols[0]))
+fid.close()
 
 #load data
 lines = open('data/language_id_initial').readlines()
