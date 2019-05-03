@@ -2,7 +2,7 @@ import os
 import numpy as np
 import subprocess
 
-def read_data_list(data):
+def read_data_list(data,utt2spk=False,utt2lang=False):
     fileid = open(data+'/wav.scp','r')
     temp = fileid.readlines()
     fileid.close()
@@ -21,15 +21,27 @@ def read_data_list(data):
                 filelist.extend([line.rstrip().split('.flac')[0].split(' ')[-1] + '.flac'])
                 utt_label.extend([line.rstrip().split(' ')[0]])
                     
-        
-    fileid = open(data+'/utt2spk','r')
-    temp = fileid.readlines()
-    fileid.close()
-    spk_label = []
-    
-    for iter,line in enumerate(temp):
-        spk_label.extend([line.rstrip().split()[-1]])
-    return filelist, utt_label, spk_label
+    if utt2spk!=False:
+        lines = open(data+'/utt2spk','r').readlines()
+        spk_label = []
+        for line in lines:
+            spk_label.extend([line.rstrip().split()[-1]])
+            
+    if utt2lang!=False:
+        lines = open(data+'/utt2lang','r').readlines()
+        lang_label = []
+        for line in lines:
+            lang_label.extend([line.rstrip().split()[-1]])
+            
+    if (utt2spk!=False) and (utt2lang!=False):
+        return filelist, utt_label
+    elif (utt2spk!=False) and (utt2lang==False):
+        return filelist, utt_label,spk_label
+    elif (utt2spk==False) and (utt2lang!=False):
+        return filelist, utt_label,lang_label
+    else:    
+        return filelist, utt_label, spk_label, lang_label
+                    
 
 def label2num(label,original_label):
     fid = open(original_label)
@@ -48,7 +60,7 @@ def label2num(label,original_label):
     spk_label_num = np.array(spk_label_num)
     return spk_label_num
 
-def split_data(name,filelist,utt_label,spk_label,total_split,lang_label=-1):
+def split_data(name,filelist,utt_label,spk_label=[],lang_label=[],total_split=1):
     split_len = len(utt_label)/total_split
     overflow = len(utt_label)%total_split
     print split_len, overflow
@@ -72,14 +84,18 @@ def split_data(name,filelist,utt_label,spk_label,total_split,lang_label=-1):
         with open(filename_wav,'w') as file:
             for iter in range(start,end_):
                 file.write('%s %s\n' % (utt_label[iter], filelist[iter]) )
-        with open(filename_utt2spk,'w') as file:
-            for iter in range(start,end_):
-                file.write('%s %s\n' % (utt_label[iter], spk_label[iter]) )
-        if lang_label!=-1:
+        if spk_label!=[]:                
+            with open(filename_utt2spk,'w') as file:
+                for iter in range(start,end_):
+                    file.write('%s %s\n' % (utt_label[iter], spk_label[iter]) )
+        if lang_label!=[]:
             with open(filename_utt2lang,'w') as file:
                 for iter in range(start,end_):
                     file.write('%s %s\n' % (utt_label[iter], lang_label[iter]) )
 
+                    
+
+                    
                     
 def split_segments(name,segments,total_split):
     split_len = len(segments)/total_split
