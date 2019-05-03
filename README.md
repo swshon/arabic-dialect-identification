@@ -24,11 +24,11 @@ First, clone this repository and then run the script as below
 Or, if you participate MGB-5 Challenge, you can request original wav files to organizer. Please find contact information below or fill the form [here](https://forms.gle/CXoQg3HJ4mGoAYhJ6).
 
 # How to use data
-Each data folder consisted of "segments", "utt2lang", "wav.scp" files. These file format is exactly same as Kaldi data preparation.
+Each data folder consisted of "segments", "utt2lang", "wav.scp" files. These file format is exactly same as Kaldi data preparation. You don't need "segments file if you downloaded ADI17 dataset from MGB-5 organizer.
 
     segments: segment-level id, YouTube id, start, end time stamp(of segment)
     utt2lang: YouTube id, dialect label (one of 17 dialects)
-    wav.scp: YouTube id, wav file location (you should change the /your_own_folder/ to the directory you downloaded
+    wav.scp: YouTube id, wav file location (This file will be generated automatically in the example code)
 
 You can also find more examples at here (http://kaldi-asr.org/doc/data_prep.html)
 
@@ -58,8 +58,13 @@ A baseline using end-to-end dialect identification system is provided and you ca
 
     python scripts/baseline_dev.py
     
-The example code extract MFCC feature from wav file and feed it to end-to-end dialect identification system. Finally, the extracted output layer activations saved in CSV format (result_dev.csv).
+The example code extract MFCC feature from wav file and feed it to pre-trained end-to-end dialect identification system. Finally, the extracted output layer activations saved in CSV format (result_dev.csv).
 
+We also provide the training example code as below.
+
+    python run_training.py  # Use when you downloaded original wav directly from YouTube.
+    python run_training_segmented.sh # Use when you downloaded the segmented files from MGB5 organizer. All wav file was already segmented and you don't need segments file information.
+ 
 You can find more information about this baseline system in the paper below
 
 Suwon Shon, Ahmed Ali, James Glass,<br />
