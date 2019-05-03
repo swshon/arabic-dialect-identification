@@ -19,7 +19,8 @@ For the Dev and Test set, about 280 hours speech data was collected from YouTube
 All the YouTube unique id is available in the data folder.
 First, clone this repository and then run the script as below
 
-    To be updated...
+    python scripts/crawl.py data/dev/utt2lang
+	
 
 Or, if you participate MGB-5 Challenge, you can request original wav files to organizer. Please find contact information below or fill the form [here](https://forms.gle/CXoQg3HJ4mGoAYhJ6).
 
