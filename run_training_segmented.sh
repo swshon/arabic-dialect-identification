@@ -1,5 +1,5 @@
 #!/bin/bash
-stage=1
+stage=0
 
 FEAT_TYPE=mfcc
 N_FFT=400
@@ -11,8 +11,20 @@ VAL_DATA=data/dev_segments_shuffle #only first split will be used for validation
 TOTAL_SPLIT=40
 SAVE_FOLDER=data/tfrecords #DO NOT FIX
 TOTAL_LANG=17
+DATA_ROOT=/your_own_folder
+
 
 if [ $stage -eq 0 ]; then
+#prepare wav.scp for each data set. Set your $DATA_ROOT variable before run. 
+for data in dev_segments; do
+  awk -v x=$DATA_ROOT -v y=$data '{print $1,x"/"y"/"$1".wav"}' data/${data}/utt2lang > data/${data}/wav.scp
+done
+for data in train_segments; do
+  awk -v x=$DATA_ROOT -v y=$data '{print $1,x"/"y"/"$2"/"$1".wav"}' data/${data}/utt2lang > data/${data}/wav.scp
+done
+fi
+
+if [ $stage -eq 1 ]; then
 # data preparation
 # Shuffle (for training)
   for data in train_segments dev_segments; do
@@ -25,7 +37,7 @@ if [ $stage -eq 0 ]; then
 fi
 
 
-if [ $stage -eq 1 ]; then
+if [ $stage -eq 2 ]; then
 # Extract MFCC feature for NN input and save in tfrecords format
 mkdir -p $SAVE_FOLDER
 for data in train_segments_shuffle dev_segments; do
@@ -41,7 +53,7 @@ python scripts/prepare_data_wavlist.py $FEAT_TYPE $N_FFT $HOP $VAD $CMVN 0 $data
 fi
 
 
-if [ $stage -eq 2 ]; then
+if [ $stage -eq 3 ]; then
 # train DNN model
   mkdir -p saver
   NN_MODEL=lang2vec
