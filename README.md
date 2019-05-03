@@ -27,7 +27,7 @@ Or, if you participate MGB-5 Challenge, you can request original wav files to or
 Each data folder consisted of "segments", "utt2lang", "wav.scp" files. These file format is exactly same as Kaldi data preparation. You don't need "segments" file if you downloaded ADI17 dataset from MGB-5 organizer.
 
     segments: segment-level id, YouTube id, start, end time stamp(of segment)
-    utt2lang: YouTube id, dialect label (one of 17 dialects)
+    utt2lang: YouTube id(or segment-level id), dialect label (one of 17 dialects)
     wav.scp: YouTube id, wav file location (This file will be generated automatically in the example code)
 
 You can also find more examples at here (http://kaldi-asr.org/doc/data_prep.html)
