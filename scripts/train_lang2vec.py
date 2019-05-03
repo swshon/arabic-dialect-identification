@@ -5,9 +5,7 @@ import numpy as np
 sys.path.insert(0, './scripts')
 sys.path.insert(0, './models')
 from tqdm import tqdm
-import csv
 from sklearn.metrics import roc_curve, auc
-from tensorflow.contrib.learn.python.learn.datasets import base
 
 
 def accuracy(predictions, labels):

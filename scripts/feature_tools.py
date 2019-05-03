@@ -1,4 +1,3 @@
-from glob import glob
 from tqdm import tqdm
 
 import os,sys

@@ -20,7 +20,7 @@ DATA_ROOT='/your_own_folder'
 
 #prepare wav.scp for each data set. Set your $DATA_ROOT variable before run. 
 lines = open('data/dev/utt2lang').readlines()
-fid = open('data/dev/wav.scp.test','w')
+fid = open('data/dev/wav.scp','w')
 for line in lines:
     cols = line.rstrip().split()
     fid.write('%s %s/dev/%s.wav\n'%(cols[0], DATA_ROOT, cols[0]))
