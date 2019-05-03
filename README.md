@@ -25,7 +25,7 @@ First, clone this repository and then run the script as below
 Or, if you participate MGB-5 Challenge, you can request segmented wav files to organizer. Please find contact information below or fill the form [here](https://forms.gle/CXoQg3HJ4mGoAYhJ6).
 
 # How to use data
-Each data folder consisted of "segments", "utt2lang", "wav.scp" files. These file format is exactly same as Kaldi data preparation. You don't need "segments" file if you downloaded ADI17 dataset from MGB-5 organizer.
+Each data folder (dev, train) consisted of "segments", "utt2lang", "wav.scp" files. These file format is exactly same as Kaldi data preparation. You don't need "segments" file if you downloaded ADI17 dataset from MGB-5 organizer (use dev_segments and train_segments folder in this case).
 
     segments: segment-level id, YouTube id, start, end time stamp(of segment)
     utt2lang: YouTube id(or segment-level id), dialect label (one of 17 dialects)
