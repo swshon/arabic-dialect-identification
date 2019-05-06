@@ -33,6 +33,12 @@ Each data folder (dev, train) consisted of "segments", "utt2lang", "wav.scp" fil
 
 You can also find more examples at here (http://kaldi-asr.org/doc/data_prep.html)
 
+# Supervised or semi-supervised task
+Since the ADI17 dataset has dialect label, supervised learning is a proper way to maximize the dataset efficiency. However, we also encourages to explore the semi-supervised setting to discover more interesting approach to discover dialect/language representation. 
+
+*If you want to explore semi-supervised setting, discard all dialect label information on the Train set and use dialect label in the Dev set only.
+
+
 # Submission of result file
 You should submit dialect identification result in segment-level in the test set. (test set will be available along the timeline of MGB-5 challenge)
 
