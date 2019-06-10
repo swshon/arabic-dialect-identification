@@ -229,8 +229,8 @@ with tf.device('/cpu:0'):
             for iter in range(len(temp_feat)):
                 feat_start = 0
                 feat_end = MAX_INPUT_LENGTH
-                if c[iter,0]>MAX_INPUT_LENGTH:
-                    feat_start = np.random.randint(0,c[iter,0]-MAX_INPUT_LENGTH,1)[0]
+                if temp_shapes[iter,0]>MAX_INPUT_LENGTH:
+                    feat_start = np.random.randint(0,temp_shapes[iter,0]-MAX_INPUT_LENGTH,1)[0]
                     feat_end = feat_start +MAX_INPUT_LENGTH
                     temp_shapes[iter,0] = MAX_INPUT_LENGTH
                 new_feat[iter,:,:] = temp_feat[iter,feat_start:feat_end,:]
