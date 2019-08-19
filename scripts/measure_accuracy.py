@@ -36,28 +36,12 @@ def accuracy_detail(predictions, labels,languages):
     return acc*100, recall*100, precision*100
 
 
-def calculate_EER(trials, scores):
-# calculating EER
-# input: trials = boolean(or int) vector, 1: postive pair 0: negative pair
-#        scores = float vector
-
-    # Calculating EER
-    fpr,tpr,threshold = roc_curve(trials,scores,pos_label=1)
-    fnr = 1-tpr
-    EER_threshold = threshold[np.argmin(abs(fnr-fpr))]
-    
-    # print EER_threshold
-    EER_fpr = fpr[np.argmin(np.absolute((fnr-fpr)))]
-    EER_fnr = fnr[np.argmin(np.absolute((fnr-fpr)))]
-    EER = 0.5 * (EER_fpr+EER_fnr)    
-    return EER
 
 
 import argparse
 parser = argparse.ArgumentParser(description="Measure accuracy, precision, recall ", add_help=True)
 parser.add_argument("--label", type=str, default="data/test_segments/utt2lang_sorted",help="label filename")
 parser.add_argument("--score", type=str, default="result_test_sorted.csv", help="score filename")
-parser.add_argument("--detail", action='store_true', help="(option) use if you want to measure per language")
 parser.add_argument("--duration", action='store_true', help="(option) use if you want to measure by duration category")
 args = parser.parse_known_args()[0]
 
@@ -103,19 +87,6 @@ print "\nPerformance evaluation (Overall)"
 print "Accuracy = %0.2f%%, Recall = %0.2f%%, Precision = %0.2f%%"% (acc,rec,pre)
 
 
-# calculate average eer
-eers=[]
-for key in lang2idx:
-    lang_label_vec = label_mat[:,lang2idx[key]]
-    scores_vec = scores[:,lang2idx[key]]
-    eers.append(calculate_EER(lang_label_vec,scores_vec))
-    if args.detail:
-        print "EER (%s) = %0.2f%%"% (key,eers[-1]*100)
-
-print "Average EER = %0.2f%%"% (np.mean(eers)*100)
-
-
-
 
 languages = []
 lines = open('data/language_id_initial').readlines()
@@ -138,71 +109,17 @@ if args.duration:
     print "\nPerformance evaluation (duration<%d)"%duration
     # calculate accuracy
     acc,rec,pre = accuracy_detail(scores[dur<duration,:], true_label[dur<duration],lang2idx.keys())
-
     print "Accuracy = %0.2f%%, Recall = %0.2f%%, Precision = %0.2f%%"% (acc,rec,pre)
-
-    # calculate average eer
-    eers=[]
-    duration = 5
-    dur_labels = np.array(true_label)[dur<duration]
-    dur_scores = scores[dur<duration,:]
-    label_mat = np.eye(len(languages))[dur_labels] 
-
-    for key in np.unique(true_label):
-        lang_label_vec = label_mat[:,key]
-        scores_vec = dur_scores[:,key]
-        eers.append(calculate_EER(lang_label_vec,scores_vec))
-        if args.detail:
-            print "EER (%s) = %0.2f%%"% (languages[key],eers[-1]*100)
-
-    print "Average EER = %0.2f%%"% (np.mean(eers)*100)
-
-
 
     duration1 = 5
     duration2 = 20
-
     print "\nPerformance evaluation (%d<=duration<%d)"%(duration1,duration2)
     # calculate accuracy
     acc,rec,pre = accuracy_detail(scores[(dur<duration2) & (dur>=duration1),:], true_label[(dur<duration2) & (dur>=duration1)],lang2idx.keys())
     print "Accuracy = %0.2f%%, Recall = %0.2f%%, Precision = %0.2f%%"% (acc,rec,pre)
-
-    # calculate average eer
-    eers=[]
-    duration = 5
-    dur_labels = np.array(true_label)[(dur<duration2) & (dur>=duration1)]
-    dur_scores = scores[(dur<duration2) & (dur>=duration1),:]
-    label_mat = np.eye(len(languages))[dur_labels] 
-
-    for key in np.unique(true_label):
-        lang_label_vec = label_mat[:,key]
-        scores_vec = dur_scores[:,key]
-        eers.append(calculate_EER(lang_label_vec,scores_vec))
-        if args.detail:
-            print "EER (%s) = %0.2f%%"% (languages[key],eers[-1]*100)
-
-    print "Average EER = %0.2f%%"% (np.mean(eers)*100)
-
-
 
     duration = 20
     print "\nPerformance evaluation (duration>=%d)"%duration
     # calculate accuracy
     acc,rec,pre = accuracy_detail(scores[dur>=duration,:], true_label[dur>=duration],lang2idx.keys())
     print "Accuracy = %0.2f%%, Recall = %0.2f%%, Precision = %0.2f%%"% (acc,rec,pre)
-
-    # calculate average eer
-    eers=[]
-    duration = 5
-    dur_labels = np.array(true_label)[dur>=duration]
-    dur_scores = scores[dur>=duration,:]
-    label_mat = np.eye(len(languages))[dur_labels] 
-
-    for key in np.unique(true_label):
-        lang_label_vec = label_mat[:,key]
-        scores_vec = dur_scores[:,key]
-        eers.append(calculate_EER(lang_label_vec,scores_vec))
-        if args.detail:
-            print "EER (%s) = %0.2f%%"% (languages[key],eers[-1]*100)
-
-    print "Average EER = %0.2f%%"% (np.mean(eers)*100)
