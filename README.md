@@ -50,15 +50,22 @@ Example result on Dev set is available on the "result_dev.csv" file. The format 
     
 The scores should represent likelihood score P(O|L_i), a conditional probability for observed data (O) given each language model (L_i). You can also find the example code to generate this "result_dev.csv" file in the "scripts/baseline_dev.py" file at the [line 82](https://github.com/swshon/arabic-dialect-identification/blob/3f7c61982a3f85fe4f6be06dd19b88bbb2b44cea/scripts/baseline_dev.py#L82). 
 
-# Performance evaluation
-Primary performance measure is accuracy (%) and alternative measure will be average EER for each dialects.
+# Performance evaluation (Accuracy and Cost_average)
+Primary performance measure is accuracy (%) and alternative measure will be average EER for each dialects. Note that this average EER is only to check the system is balanced for all languages.
 You can check the performance on the dev set as below (need result_dev.csv file). 
     
-    python scripts/measure_performance_dev.py
-and the result on Dev set shows
+    python scripts/measure_accuracy.py --label data/dev_segments/utt2lang --score result_dev.csv --duration --detail
+and the result on Dev set will show
 
     Accuracy = 83.03%
     Average EER = 8.57%
+
+To follow the standard measurement on Language ID research area, we also provide code to measure cost average that defined on NIST LRE17.
+
+    python scripts/measure_cavg.py --label data/dev_segments/utt2lang --score result_dev.csv --softmax --duration
+and the result on Dev set will show
+
+    Cavg*100 = 11.65
 
 # Baseline example code with pre-trained model
 A baseline using end-to-end dialect identification system is provided and you can run the example code as below
