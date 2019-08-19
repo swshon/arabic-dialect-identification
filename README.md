@@ -54,7 +54,7 @@ The scores should represent likelihood score P(O|L_i), a conditional probability
 Primary performance measure is accuracy (%) and alternative measure will be average EER for each dialects.
 You can check the performance on the dev set as below (need result_dev.csv file). 
     
-    python scripts/measure_accuracy.py --label data/dev_segments/utt2lang --score result_dev.csv --duration --detail
+    python scripts/measure_accuracy.py --label data/dev_segments/utt2lang --score result_dev.csv --duration
 and the result on Dev set will show
 
     Accuracy = 83.03%
