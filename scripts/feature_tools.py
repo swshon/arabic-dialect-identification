@@ -72,7 +72,7 @@ def feat_extract(filelist,feat_type,n_fft_length=512,hop=160,vad=True,cmvn=False
 
         # Simple VAD based on the energy
         if vad:
-            E = librosa.feature.rmse(y, frame_length=n_fft_length,hop_length=hop,)
+            E = librosa.feature.rms(y, frame_length=n_fft_length,hop_length=hop,)
             threshold= np.mean(E)/2 * 0.90
             vad_segments = np.nonzero(E>threshold)
             if vad_segments[1].size!=0:
