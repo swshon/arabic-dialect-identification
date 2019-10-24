@@ -98,7 +98,14 @@ Ahmed Ali (amali@hbku.edu.qa)
 
 https://arabicspeech.org/mgb5 
 
+# Citing
 
+	@inproceedings{ali2019mgb5,
+	  title={The MGB-5 Challenge: Recognition and Dialect Identification of Dialectal Arabic Speech},
+	  author={Ali, Ahmed and Shon, Suwon and Samih, Younes and Mubarak, Hamdy and Abdelali, Ahmed and Glass, James and Renals, Steve and Choukri, Khalid},
+	  booktitle={IEEE Workshop on Automatic Speech Recognition and Understanding (ASRU)},
+	  year={2019},
+	}
 
 
 
