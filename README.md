@@ -3,6 +3,8 @@ Fine-grained, country-level Arabic dialect identification (17 Arabic countries)
 
 This repository is to provide YouTube id for Arabic Dialect Identification (ADI) track of the fifth edition of the Multi-Genre Broadcast Challenge(MGB-5). Training example of end-to-end dialect identification system is also available.
 
+You can also find more detail on this dataset at here (http://groups.csail.mit.edu/sls/downloads/adi17/)
+
 # ADI Task 
 The task of ADI is dialect identification of speech from YouTube to one of the 17 dialects (ADI17). 
 The previous studies on Arabic dialect identification using audio signal is limited to 5 dialect classes by lack of speech corpus. 
